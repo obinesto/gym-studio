@@ -2,7 +2,7 @@
 
 A modern, fully responsive, and visually appealing landing page template for a gym or fitness studio. This project is built with pure HTML, CSS, and JavaScript, making it lightweight, fast, and easy to customize.
 
-**Live Demo:** [**https://gym-training-studio.vercel.app/**](https://gym-training-studio.vercel.app/)
+**Live Demo:** [**https://gym-studio-cyprianobi.vercel.app/**](https://gym-studio-cyprianobi.vercel.app/)
 
 ---
 
