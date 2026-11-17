@@ -1,0 +1,356 @@
+:root {
+    --myPurple: #b41be7;
+    --myblack: #100f0f;
+    --offWhite: #f8f8f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 0;
+    min-height: 100vh;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--myblack);
+    background: #191b28 url('Assets/Images/contact-bg.jpg') center / cover no-repeat;
+}
+
+.signup-page {
+    width: min(100%, 500px);
+    min-height: 100vh;
+    margin: auto;
+    padding: 1.5rem 1.25rem 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-height: 44px;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    color: var(--myPurple);
+}
+
+.form_wrapper {
+    width: 100%;
+    padding: clamp(1.25rem, 4vw, 1.75rem);
+    background: #fff;
+    border-top: 5px solid var(--myPurple);
+    box-shadow: 0 12px 40px #00000035;
+}
+
+.title_container {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.studio-name {
+    margin: 0 0 .35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.studio-name span {
+    color: var(--myPurple);
+}
+
+form {
+    display: grid;
+    gap: .75rem;
+}
+
+.name-fields,
+.password-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.input_field {
+    min-width: 0;
+}
+
+.input_field>label,
+legend {
+    display: block;
+    margin-bottom: .4rem;
+    font-size: .875rem;
+    font-weight: 700;
+}
+
+.input_field input,
+select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    padding: .35rem .75rem;
+    border: 1px solid #bbb;
+    border-radius: 0;
+    background: #fff;
+    color: var(--myblack);
+    font: inherit;
+}
+
+.input-control {
+    position: relative;
+}
+
+.input-control svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 11px;
+    width: 20px;
+    height: 20px;
+    color: var(--myPurple);
+    pointer-events: none;
+}
+
+.input-control input {
+    padding-left: 2.6rem;
+    font-size: 16px;
+}
+
+.input_field input:hover,
+select:hover {
+    border-color: var(--myPurple);
+}
+
+a:focus-visible,
+button:focus-visible,
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+    outline: 2px solid var(--myPurple);
+    outline-offset: 3px;
+}
+
+.input_field input:focus,
+select:focus {
+    border-color: var(--myPurple);
+    outline: none;
+    box-shadow: none;
+}
+
+input[aria-invalid="true"] {
+    border-color: #9b172f;
+}
+
+.field-hint,
+.field-error {
+    margin: .35rem 0 0;
+    font-size: .8rem;
+}
+
+.field-hint,
+.optional {
+    color: #625a5a;
+}
+
+.field-error {
+    color: #9b172f;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.gender-options {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.gender-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-height: 44px;
+    margin-right: 1.5rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--myPurple);
+    cursor: pointer;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    padding: .5rem 0;
+    font-size: .875rem;
+    cursor: pointer;
+}
+
+.checkbox-option input {
+    margin-top: .1rem;
+}
+
+.signup-button {
+    width: 100%;
+    min-height: 44px;
+    padding: .85rem 1rem;
+    border: 1px solid var(--myPurple);
+    border-radius: 0;
+    background: var(--myPurple);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signup-button:hover:not(:disabled),
+.signup-button:focus-visible {
+    background: #fff;
+    color: var(--myPurple);
+}
+
+.signup-button:disabled {
+    opacity: .75;
+    cursor: default;
+}
+
+.form-note {
+    margin: 0;
+    text-align: center;
+    color: #625a5a;
+    font-size: .8rem;
+}
+
+.toastify.signup-toast,
+.signup-feedback {
+    width: 360px;
+    max-width: calc(100vw - 2rem);
+    padding: 1rem;
+    border: 1px solid #ece6f0;
+    border-left: 3px solid var(--myPurple);
+    border-radius: 0;
+    background: #fff;
+    color: var(--myblack);
+    font: inherit;
+    box-shadow: 0 8px 30px #1b0b2424;
+    overflow-wrap: anywhere;
+}
+
+.signup-feedback {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2147483647;
+}
+
+.signup-feedback[hidden] {
+    display: none;
+}
+
+.signup-notification-content {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 24px;
+    align-items: start;
+    gap: .75rem;
+}
+
+.signup-notification-icon {
+    color: var(--myPurple);
+    margin-top: 1px;
+}
+
+.signup-notification-copy strong {
+    display: block;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.signup-notification-copy span {
+    display: block;
+    margin-top: .25rem;
+    color: #625a5a;
+    font-size: .75rem;
+    line-height: 1.6;
+}
+
+.signup-notification-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--myPurple);
+    cursor: pointer;
+}
+
+.signup-notification-close:hover {
+    color: #78129b;
+}
+
+.toastify.signup-toast::after,
+.signup-feedback::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--myPurple);
+    transform-origin: left;
+    animation: signup-redirect 3s linear forwards;
+}
+
+@keyframes signup-redirect {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-page {
+        padding: 1rem .75rem 2rem;
+    }
+
+    .password-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gender-options label {
+        margin-right: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toastify {
+        transition: none;
+    }
+
+    .toastify.signup-toast::after,
+    .signup-feedback::after {
+        animation: none;
+        display: none;
+    }
+}
+
+@media (max-width: 359px) {
+    .name-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

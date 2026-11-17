@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Images/square_logo_trainingstudio.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sign-up.css">
+    <script src="sign-up.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js" defer></script>
+    <title>Sign Up | Training Studio</title>
+</head>
+<body>
+    <main class="signup-page">
+        <a class="back-link" href="index.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg>
+            Back to Training Studio
+        </a>
+        <section class="form_wrapper" aria-label="Sign up">
+            <div class="title_container">
+                <p class="studio-name">Training <span>Studio</span></p>
+            </div>
+            <form id="signup-form" method="post">
+                <div class="name-fields">
+                    <div class="input_field">
+                        <label for="first-name">First name</label>
+                        <div class="input-control">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>
+                            <input id="first-name" name="firstName" type="text" autocomplete="given-name" maxlength="80" pattern=".*\S.*" title="Enter your first name." required>
+                        </div>
+                    </div>
+                    <div class="input_field">
+                        <label for="last-name">Last name</label>
+                        <div class="input-control">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>
+                            <input id="last-name" name="lastName" type="text" autocomplete="family-name" maxlength="80" pattern=".*\S.*" title="Enter your last name." required>
+                        </div>
+                    </div>
+                </div>
+                <div class="input_field">
+                    <label for="email">Email</label>
+                    <div class="input-control">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="m3 6 9 7 9-7"/></svg>
+                        <input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div class="password-fields">
+                    <div class="input_field">
+                        <label for="password">Password</label>
+                        <div class="input-control">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                            <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" aria-describedby="password-hint" required>
+                        </div>
+                        <p class="field-hint" id="password-hint">Use at least 8 characters.</p>
+                    </div>
+                    <div class="input_field">
+                        <label for="confirm-password">Confirm password</label>
+                        <div class="input-control">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                            <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" aria-describedby="confirm-error" required>
+                        </div>
+                        <p class="field-error" id="confirm-error" aria-live="polite"></p>
+                    </div>
+                </div>
+                <fieldset class="gender-options">
+                    <legend>Gender <span class="optional">(optional)</span></legend>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </fieldset>
+                <label class="checkbox-option" for="terms">
+                    <input id="terms" name="terms" type="checkbox" required>
+                    <span>I agree with the terms and conditions</span>
+                </label>
+                <label class="checkbox-option" for="newsletter">
+                    <input id="newsletter" name="newsletter" type="checkbox">
+                    <span>I want to receive the newsletter <span class="optional">(optional)</span></span>
+                </label>
+                <button class="signup-button" id="signup-button" type="submit">Sign Up</button>
+                <p class="form-note">Demo</p>
+            </form>
+        </section>
+    </main>
+    <template id="signup-notification">
+        <div class="signup-notification-content">
+            <svg class="signup-notification-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+            <div class="signup-notification-copy">
+                <strong>Signup complete</strong>
+                <span>Returning to Training Studio…</span>
+            </div>
+            <button class="signup-notification-close" type="button" aria-label="Dismiss notification and return to Training Studio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+            </button>
+        </div>
+    </template>
+    <div id="signup-feedback" class="signup-feedback" role="status" hidden></div>
+</body>
+</html>
